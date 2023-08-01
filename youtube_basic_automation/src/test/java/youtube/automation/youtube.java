@@ -1,5 +1,6 @@
 package youtube.automation;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.junit.Test;
@@ -19,7 +20,7 @@ public class youtube {
     String url;
 
     @BeforeTest
-    public void setup() {
+    public static void setup() throws MalformedURLException, InterruptedException {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         String url;
@@ -31,13 +32,14 @@ public class youtube {
         url = "http://127.0.0.1:4723/wd/hub";
         driver = new AndroidDriver<MobileElement>(new URL(url), capabilities);
         System.out.println("Clicked on the App");
-
+        Thread.sleep(3000);
     }
 
     @Test
-    public void Youtube_test_search() throws InterruptedException {
+    public void Youtube_test_search() throws InterruptedException, MalformedURLException {
+        youtube.setup();
+        Thread.sleep(5000);
         driver.findElementByAccessibilityId("Search").click();
-
         driver.findElementByClassName("android.widget.EditText").sendKeys("sqa");
         ((PressesKey) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
 
