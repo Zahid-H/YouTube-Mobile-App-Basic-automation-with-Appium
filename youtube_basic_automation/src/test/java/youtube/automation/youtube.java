@@ -9,6 +9,9 @@ import org.testng.annotations.BeforeTest;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
+import io.appium.java_client.android.nativekey.PressesKey;
 
 public class youtube {
     public static AppiumDriver<MobileElement> driver;
@@ -31,7 +34,12 @@ public class youtube {
     }
 
     @Test
-    public void Youtube_test_search() {
+    public void Youtube_test_search() throws InterruptedException {
         driver.findElementByAccessibilityId("Search").click();
+
+        driver.findElementByClassName("android.widget.EditText").sendKeys("sqa");
+        ((PressesKey) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
+
+        Thread.sleep(3000);
     }
 }
