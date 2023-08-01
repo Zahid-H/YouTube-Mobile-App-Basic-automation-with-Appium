@@ -40,10 +40,11 @@ public class youtube {
         youtube.setup();
         Thread.sleep(5000);
         driver.findElementByAccessibilityId("Search").click();
-        driver.findElementByClassName("android.widget.EditText").sendKeys("sqa");
+        driver.findElementByClassName("android.widget.EditText").sendKeys("Sofware Quality Assurance");
         ((PressesKey) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
 
         Thread.sleep(3000);
+        System.out.println("Youtube search executed");
     }
 
     @AfterTest
