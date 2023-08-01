@@ -16,7 +16,7 @@
 <ul>
   <li>Download or clone the file in you directory open in editor example:VScode/intellij IDEA</li>
   <li>Open Android studio and run your emulator</li>
-  <li>Run appium server and start Session</li>
+  <li>Run appium server and start Session in Appium inspector</li>
   <li>Run code from the directory ..\YouTube-Mobile-App-Basic-automation-with-Appium\youtube_basic_automation\src\test\java\youtube\automation\youtube.java</li>
 </ul>
 
