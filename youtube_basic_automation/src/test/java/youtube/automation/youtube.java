@@ -4,6 +4,7 @@ import java.net.URL;
 
 import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import io.appium.java_client.AppiumDriver;
@@ -41,5 +42,10 @@ public class youtube {
         ((PressesKey) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
 
         Thread.sleep(3000);
+    }
+
+    @AfterTest
+    public void closeApp() {
+
     }
 }
