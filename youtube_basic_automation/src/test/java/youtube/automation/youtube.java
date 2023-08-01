@@ -2,6 +2,7 @@ package youtube.automation;
 
 import java.net.URL;
 
+import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeTest;
 
@@ -17,13 +18,20 @@ public class youtube {
     public void setup() {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        String url;
         capabilities.setCapability("deviceName", "emulator-5554");
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("appPackage", "com.daraz.android");
-        capabilities.setCapability("appActivity", "com.lazada.android.maintab.DarazEntryActivity");
+        capabilities.setCapability("appPackage", "com.google.android.youtube");
+        capabilities.setCapability("appActivity", "com.google.android.apps.youtube.app.watchwhile.WatchWhileActivity");
         capabilities.setCapability("noReset", true);
         url = "http://127.0.0.1:4723/wd/hub";
         driver = new AndroidDriver<MobileElement>(new URL(url), capabilities);
+        System.out.println("Clicked on the App");
+
     }
 
+    @Test
+    public void Youtube_test() {
+
+    }
 }
