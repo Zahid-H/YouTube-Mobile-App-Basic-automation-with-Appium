@@ -31,7 +31,7 @@ public class youtube {
     }
 
     @Test
-    public void Youtube_test() {
-
+    public void Youtube_test_search() {
+        driver.findElementByAccessibilityId("Search").click();
     }
 }
