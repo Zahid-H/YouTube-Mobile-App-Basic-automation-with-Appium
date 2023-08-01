@@ -46,6 +46,6 @@ public class youtube {
 
     @AfterTest
     public void closeApp() {
-
+        driver.quit();
     }
 }
